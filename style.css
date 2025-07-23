@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  background-color: #0AAADE;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  justify-content: center;
+  margin-left: 100px;
+  width:80%;
+  overflow:auto;
+  margin-top: 25px;
+}
+
+.logoo {
+            display: flex;
+            align-items: center; /* aligne verticalement */
+            gap: 1rem; /* espace entre logo et titre */
+            width:20%;  
+            float:left;
+            justify-content: right;
+    }
+
+
+
+        
+
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  justify-content: right;
+  letter-spacing: 1,5px;
+  color: whitesmoke;
+  width:80%;  
+  float:right;
+}
+
+h2 {
+  font-size: 1em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color:whitesmoke;
+}
+
+.countdown {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.circle svg {
+  transform: rotate(-90deg);
+}
+
+.circle circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: rectangle;
+  transition: stroke-dashoffset 1s ease;
+}
+
+.circle .value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.circle .label {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
+/* Couleurs personnalisées */
+.jours circle.foreground { stroke: #FF6F00; } /* Bleu aqua foncé */
+.heures circle.foreground { stroke: url(#aquaGradient); } /* Orange vif */
+.minutes circle.foreground { stroke:#FF6F00  ; } /* Blanc */
+.secondes circle.foreground { stroke:  url(#aquaGradient); } /* Dégradé SVG (dans le HTML) */
+
+.background {
+  stroke: white;
+}
