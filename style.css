@@ -104,10 +104,10 @@ h2 {
 }
 
 /* Couleurs personnalisées */
-.jours circle.foreground { stroke: #FF6F00; } /* Bleu aqua foncé */
-.heures circle.foreground { stroke: url(#aquaGradient); } /* Orange vif */
-.minutes circle.foreground { stroke:#FF6F00  ; } /* Blanc */
-.secondes circle.foreground { stroke:  url(#aquaGradient); } /* Dégradé SVG (dans le HTML) */
+.jours circle.foreground { stroke: #FF6F00; }  /* Orange vif */
+.heures circle.foreground { stroke: url(#aquaGradient); } /* Bleu aqua foncé */
+.minutes circle.foreground { stroke:#FF6F00  ; } /* Orange vif */
+.secondes circle.foreground { stroke:  url(#aquaGradient); } /* Bleu aqua foncé */
 
 .background {
   stroke: white;
