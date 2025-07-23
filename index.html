@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water and Mining – Coming Soon</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Dégradé pour le cercle des secondes -->
+  <svg width="0" height="0">
+    <defs>
+      <linearGradient id="aquaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00BCD4" />
+        <stop offset="100%" stop-color="#007C91" />
+      </linearGradient>
+    </defs>
+  </svg>
+</head>
+<body>
+  <header>
+    <div class="title"> 
+        <h1>Water and Mining – Site en cours de construction</h1>
+    </div>
+    <div class="logoo">
+        <img src="C:\Users\Jennifer Sharon OUED\Downloads\Logoimg-removebg-preview.png" alt="Logo Water and Mining" class="logo" />
+    </div>
+  </header>
+
+  
+
+  <h2><b>Nous revenons bientôt avec de grandes innovations. Restez à l’affût !</h2></b><br>
+
+  <div class="countdown">
+    <!-- Jours -->
+    <div class="circle jours">
+      <svg width="120" height="120">
+        <circle r="50" cx="60" cy="60" class="background" />
+        <circle r="50" cx="60" cy="60" class="foreground" stroke-dasharray="314" stroke-dashoffset="0" />
+      </svg>
+      <div class="value" id="days">0</div>
+      <div class="label">Jours</div>
+    </div>
+
+    <!-- Heures -->
+    <div class="circle heures">
+      <svg width="120" height="120">
+        <circle r="50" cx="60" cy="60" class="background" />
+        <circle r="50" cx="60" cy="60" class="foreground" stroke-dasharray="314" stroke-dashoffset="0" />
+      </svg>
+      <div class="value" id="hours">0</div>
+      <div class="label">Heures</div>
+    </div>
+
+    <!-- Minutes -->
+    <div class="circle minutes">
+      <svg width="120" height="120">
+        <circle r="50" cx="60" cy="60" class="background" />
+        <circle r="50" cx="60" cy="60" class="foreground" stroke-dasharray="314" stroke-dashoffset="0" />
+      </svg>
+      <div class="value" id="minutes">0</div>
+      <div class="label">Minutes</div>
+    </div>
+
+    <!-- Secondes -->
+    <div class="circle secondes">
+      <svg width="120" height="120">
+        <circle r="50" cx="60" cy="60" class="background" />
+        <circle r="50" cx="60" cy="60" class="foreground" stroke-dasharray="314" stroke-dashoffset="0" />
+      </svg>
+      <div class="value" id="seconds">0</div>
+      <div class="label">Secondes</div>
+    </div>
+  </div>
+
+  <script>
+    const radius = 50;
+    const circumference = 2 * Math.PI * radius;
+
+    function setProgress(element, percent) {
+      const offset = circumference * (1 - percent);
+      element.style.strokeDashoffset = offset;
+    }
+
+    const countdownDate = new Date("2025-07-26T14:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+
+      setProgress(document.querySelector(".jours .foreground"), days / 365);
+      setProgress(document.querySelector(".heures .foreground"), hours / 24);
+      setProgress(document.querySelector(".minutes .foreground"), minutes / 60);
+      setProgress(document.querySelector(".secondes .foreground"), seconds / 60);
+    }, 1000);
+  </script>
+</body>
+</html>
